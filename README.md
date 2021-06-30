@@ -12,8 +12,8 @@
 ### Update file .env
 
 ```
-APP_NAME="Laravel Blog"
-APP_URL="http://laravel-blog.test"
+APP_NAME="Laravel Questionnaires"
+APP_URL="http://questionnaires.test"
 DB_USERNAME="laravel"
 DB_PASSWORD="laravel"
 ```
