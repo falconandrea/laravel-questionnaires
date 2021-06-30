@@ -2,7 +2,7 @@
 
 ## Initial config
 
-Follow the guide here [Start Laravel Project] (https://github.com/falconandrea/start-laravel-project/blob/main/README.md)
+Follow the guide here [Start Laravel Project](https://github.com/falconandrea/start-laravel-project/blob/main/README.md)
 
 ## License
 
