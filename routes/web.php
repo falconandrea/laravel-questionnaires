@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\QuestionnaireController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,4 +23,8 @@ Route::get(
 );
 Auth::routes();
 
-Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+Route::get('/questionnaires/create', [QuestionnaireController::class, 'create']);
+Route::get('/questionnaires/{questionnaire}', [QuestionnaireController::class, 'show']);
+Route::post('/questionnaires', [QuestionnaireController::class, 'store']);

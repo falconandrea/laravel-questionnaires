@@ -18,7 +18,7 @@
 
             <div class="w-full p-6">
                 <p class="text-gray-700">
-                    You are logged in!
+                    <a href="/questionnaires/create" title="" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outlineinline-block leading-8">Create new questionnaire</a>
                 </p>
             </div>
         </section>
