@@ -8,7 +8,7 @@
                 {{ $questionnaire->title }}
             </header>
             <div class="w-full">
-                @foreach ($questionnaire->questionsWithAnswers as $question)
+                @foreach ($questionnaire->questions as $question)
                     <div class="border-b-2 border-gray-100 pb-6">
                         <p class="p-6"><strong>{{ $question->question }}</strong></p>
                         <ul class="list-disc pl-12">

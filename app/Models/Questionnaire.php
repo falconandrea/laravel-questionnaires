@@ -16,8 +16,4 @@ class Questionnaire extends Model
     public function questions() {
         return $this->hasMany(Question::class);
     }
-
-    public function questionsWithAnswers() {
-        return $this->hasMany(Question::class)->with(['answers']);
-    }
 }
