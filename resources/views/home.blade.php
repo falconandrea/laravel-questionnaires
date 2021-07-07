@@ -22,6 +22,25 @@
                 </p>
             </div>
         </section>
+
+        @if ($questionnaires && $questionnaires->count() > 0)
+            <section class="flex flex-col break-words bg-white sm:border-1 sm:rounded-md sm:shadow-lg mt-8">
+                <header class="font-semibold bg-gray-200 text-gray-700 py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md">
+                    List questionnaires
+                </header>
+
+                <div class="w-full">
+                    @foreach($questionnaires as $questionnaire)
+                        <div class="text-gray-700 border-b-2 border-gray-100 p-6">
+                            <p>
+                                <a class="underline" href="/questionnaires/{{ $questionnaire->id }}" title="">{{ $questionnaire->title }}</a>
+                            </p>
+                            <small class="mt-2 block">{{ $questionnaire->description }} - Domande: {{ $questionnaire->questions->count() }}</small>
+                        </div>
+                    @endforeach
+                </div>
+            </section>
+        @endif
     </div>
 </main>
 @endsection
