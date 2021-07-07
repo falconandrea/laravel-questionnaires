@@ -7,6 +7,10 @@ use \App\Models\Questionnaire;
 
 class QuestionController extends Controller
 {
+    public function __construct() {
+        $this->middleware('auth');
+    }
+
     public function create(Questionnaire $questionnaire) {
         return view('question.create', compact('questionnaire'));
     }
