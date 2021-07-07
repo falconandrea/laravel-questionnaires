@@ -5,7 +5,7 @@
     <div class="w-full sm:px-6">
         <section class="flex flex-col break-words bg-white sm:border-1 sm:rounded-md sm:shadow-lg">
             <header class="font-semibold bg-gray-200 text-gray-700 py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md">
-                {{ $questionnaire->title }}
+                <a href="/home" title="" class="underline"><x-arrow-left class="h-4 w-4 inline-block"></x-arrow-left> Back to list questionnaire</a> - {{ $questionnaire->title }}
             </header>
             <div class="w-full">
                 @foreach ($questionnaire->questions as $question)

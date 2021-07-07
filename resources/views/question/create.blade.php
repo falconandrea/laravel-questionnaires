@@ -5,7 +5,7 @@
     <div class="w-full sm:px-6">
         <section class="flex flex-col break-words bg-white sm:border-1 sm:rounded-md sm:shadow-lg">
             <header class="font-semibold bg-gray-200 text-gray-700 py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md">
-                New question
+                <a href="/questionnaires/{{ $questionnaire->id }}" title="" class="underline"><x-arrow-left class="h-4 w-4 inline-block"></x-arrow-left> Back to questionnaire</a> - New question
             </header>
             <div class="w-full p-6 flex justify-center">
                 <div class="lg:w-6/12 w-10/12">
