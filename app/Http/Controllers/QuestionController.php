@@ -30,6 +30,6 @@ class QuestionController extends Controller
 
         $question->answers()->createMany($answers);
 
-        return redirect('/questionnaire/' . $questionnaire->id);
+        return redirect('/questionnaires/' . $questionnaire->id);
     }
 }
