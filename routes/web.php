@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\QuestionnaireController;
 
 /*
@@ -28,3 +29,6 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/questionnaires/create', [QuestionnaireController::class, 'create']);
 Route::get('/questionnaires/{questionnaire}', [QuestionnaireController::class, 'show']);
 Route::post('/questionnaires', [QuestionnaireController::class, 'store']);
+
+Route::get('/questionnaires/{questionnaire}/questions/create', [QuestionController::class, 'create']);
+Route::post('/questionnaires/{questionnaire}/questions', [QuestionController::class, 'store']);
