@@ -9,19 +9,23 @@
             </header>
             <div class="w-full">
                 @foreach ($questionnaire->questions as $question)
-                    <div class="border-b-2 border-gray-100 pb-6">
-                        <p class="p-6"><strong>{{ $question->question }}</strong></p>
-                        <ul class="list-disc pl-12">
-                        @foreach ($question->answers as $answer)
-                            <li>{{ $answer->answer }}</li>
-                        @endforeach
-                        </ul>
-                        <form class="px-6 pt-4" method="POST" action="/questionnaires/{{ $questionnaire->id }}/questions/{{ $question->id }}">
-                            @method('DELETE')
-                            @csrf
+                    <div class="pb-6">
+                        <div class="p-6 flex justify-between">
+                            <strong>{{ $question->question }}</strong>
+                            <form class="" method="POST" action="/questionnaires/{{ $questionnaire->id }}/questions/{{ $question->id }}">
+                                @method('DELETE')
+                                @csrf
 
-                            <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outlineinline-block leading-4 text-sm">Delete question</button>
-                        </form>
+                                <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outlineinline-block leading-4 text-sm">Delete question</button>
+                            </form></div>
+                        <div class="border-t-2 border-b-2 border-gray-100">
+                            @foreach ($question->answers as $answer)
+                                <div class="flex justify-between py-2 px-6 border-t-2 border-b-2 border-gray-100">
+                                    <span>{{ $answer->answer }}</span>
+                                    <small>{{ intval(($answer->responses->count() * 100) / ($question->responses->count() > 0 ? $question->responses->count() : 1)) }}%</small>
+                                </div>
+                            @endforeach
+                        </div>
                     </div>
                 @endforeach
                 <div class="p-6 flex justify-center">
