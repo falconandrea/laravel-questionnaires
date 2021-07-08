@@ -33,7 +33,7 @@
                     @foreach($questionnaires as $questionnaire)
                         <div class="text-gray-700 border-b-2 border-gray-100 p-6">
                             <p>
-                                <a class="underline" href="/questionnaires/{{ $questionnaire->id }}" title="">{{ $questionnaire->title }}</a> - <a class="underline" href="/surveys/{{ $questionnaire->id }}-{{ Str::slug($questionnaire->title) }}" title="">Link Survey</a>
+                                <a class="underline" href="{{ $questionnaire->path() }}" title="">{{ $questionnaire->title }}</a> - <a class="underline" href="{{ $questionnaire->publicPath() }}" title="">Link Survey</a>
                             </p>
                             <small class="mt-2 block">{{ $questionnaire->description }} - Domande: {{ $questionnaire->questions->count() }}</small>
                         </div>

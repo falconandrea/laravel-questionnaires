@@ -9,7 +9,7 @@
             </header>
             <div class="w-full">
                 <p class="text-gray-700 p-6">{{ $questionnaire->description }}</p>
-                <form method="POST" action="/surveys/{{ $questionnaire->id }}-{{ Str::slug($questionnaire->title) }}">
+                <form method="POST" action="{{ $questionnaire->publicPath() }}">
                     @csrf
                     @foreach ($questionnaire->questions as $key => $question)
                         <div class="border-b-2 border-gray-100 pb-6">
