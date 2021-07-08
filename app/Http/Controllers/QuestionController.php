@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\Models\Questionnaire;
+use App\Models\Question;
 
 class QuestionController extends Controller
 {
@@ -33,6 +34,13 @@ class QuestionController extends Controller
         }
 
         $question->answers()->createMany($answers);
+
+        return redirect($questionnaire->path());
+    }
+
+    public function destroy(Questionnaire $questionnaire, Question $question) {
+        $question->answers()->delete();
+        $question->delete();
 
         return redirect($questionnaire->path());
     }

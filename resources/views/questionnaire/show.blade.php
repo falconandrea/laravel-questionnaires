@@ -16,6 +16,12 @@
                             <li>{{ $answer->answer }}</li>
                         @endforeach
                         </ul>
+                        <form class="px-6 pt-4" method="POST" action="/questionnaires/{{ $questionnaire->id }}/questions/{{ $question->id }}">
+                            @method('DELETE')
+                            @csrf
+
+                            <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outlineinline-block leading-4 text-sm">Delete question</button>
+                        </form>
                     </div>
                 @endforeach
                 <div class="p-6 flex justify-center">
